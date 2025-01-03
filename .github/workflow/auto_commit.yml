@@ -1,0 +1,30 @@
+name: Auto Commit and Push
+
+on:
+  push:
+    branches:
+      - main  
+  workflow_dispatch: 
+
+jobs:
+  commit-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Configure Git
+      run: |
+        git config --global user.name "Kundan Vyas"
+        git config --global user.email "kundan547@users.noreply.github.com"
+
+    - name: Stage changes
+      run: git add .
+
+    - name: Commit changes
+      run: |
+        git diff-index --quiet HEAD || git commit -m "Auto-commit changes on $(date)"
+
+    - name: Push changes
+      run: git push origin ${{ github.ref_name }}
