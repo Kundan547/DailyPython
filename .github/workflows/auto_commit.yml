@@ -1,4 +1,4 @@
-name: Auto Commit, Push, and Create Pull Request
+name: Auto Commit and Push Changes
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  commit-and-pr:
+  commit-and-push:
     runs-on: ubuntu-latest
 
     steps:
@@ -37,13 +37,3 @@ jobs:
     - name: Push changes to a new branch
       run: |
         git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Kundan547/DailyPython.git "$branch_name"
-
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v5
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ env.branch_name }}
-        title: "Auto Pull Request - $(date)"
-        body: |
-          This PR contains auto-committed changes detected and pushed to a new branch.
-        base: main
