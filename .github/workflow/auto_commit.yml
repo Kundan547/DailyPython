@@ -1,13 +1,13 @@
-name: Auto Commit and Push
+name: Auto Commit, Push, and Create Pull Request
 
 on:
   push:
     branches:
-      - main  
-  workflow_dispatch: 
+      - main  # Replace with your default branch name if different
+  workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:
-  commit-and-push:
+  commit-and-pr:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,6 +19,12 @@ jobs:
         git config --global user.name "Kundan Vyas"
         git config --global user.email "kundan547@users.noreply.github.com"
 
+    - name: Create a new branch
+      run: |
+        NEW_BRANCH="auto-update-$(date +'%Y%m%d%H%M%S')"
+        git checkout -b "$NEW_BRANCH"
+        echo "$NEW_BRANCH" > branch_name.txt
+
     - name: Stage changes
       run: git add .
 
@@ -26,5 +32,18 @@ jobs:
       run: |
         git diff-index --quiet HEAD || git commit -m "Auto-commit changes on $(date)"
 
-    - name: Push changes
-      run: git push origin ${{ github.ref_name }}
+    - name: Push changes to a new branch
+      run: |
+        NEW_BRANCH=$(cat branch_name.txt)
+        git push origin "$NEW_BRANCH"
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Auto-commit changes on $(date)"
+        branch: auto-update-$(date +'%Y%m%d%H%M%S') # Use the generated branch name
+        title: "Auto Pull Request - $(date)"
+        body: |
+          This PR contains auto-committed changes detected and pushed to a new branch.
+        base: main  # Change if your default branch is different
