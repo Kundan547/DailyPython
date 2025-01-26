@@ -10,3 +10,10 @@ Data = "Docker, Kuberenetes, Jenkins, Aws, Grafana, Gitlabs, Git , Github, Pytho
 
 skils = Data.split(",",2)
 print(skils)
+
+#Here the another methods of string lower(), upper(), title(), Find().
+word = sentance.lower()
+print(word)#it should be return the lower case sentance string.
+
+skils = Data.upper()
+print(skils)
