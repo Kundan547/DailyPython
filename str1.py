@@ -36,3 +36,13 @@ if skil_set.find(data) != -1:
 else:
     print("It not exist")
 
+#Lets practise some questions based on these methods for better understanding of python string.
+
+#QUESTION 1 -->
+#How find the substring in python?
+
+#Soo question says that find the sub string , we need to usee find() to find the sub string.
+
+test = 'Git is a virsion control system, it manages the history of code , you change while code.'
+substring  = test.find('is')
+print(substring)
