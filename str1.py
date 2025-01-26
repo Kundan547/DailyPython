@@ -16,4 +16,7 @@ word = sentance.lower()
 print(word)#it should be return the lower case sentance string.
 
 skils = Data.upper()
-print(skils)
+print(skils)#It should be return the upper case sentance.
+
+word = sentance.title()
+print(word)#It should be return the string in frist word of every single word is capital.
