@@ -27,4 +27,12 @@ skil_set = sentance + Data
 print(skil_set)
 
 data = skil_set.find('Python')
-print(data)#It should be return index 0.
+#print(data)#It should be return index 0.
+data = 'Python'
+#INSTEAD OF PRINTING DIRECTLY WE CAN USE CONDITIONS FOR THIS IS THE SUB STRING IS EXIST THEN IT RETURNS TRUE OTHER WISE FLASE.
+
+if skil_set.find(data) != -1:
+    print("It exist")
+else:
+    print("It not exist")
+
