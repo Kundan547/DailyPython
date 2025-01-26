@@ -46,3 +46,16 @@ else:
 test = 'Git is a virsion control system, it manages the history of code , you change while code.'
 substring  = test.find('is')
 print(substring)
+
+#Soo fix the problem of find() method we can use this.
+
+data = 'Python,Flask,Django,FastAPI'
+sub_string = input("Inter the substring to find." )
+
+Index = data.find(sub_string)
+
+if Index != -1:
+    extracted_string = data[Index: Index + len(sub_string)]
+    print("Extracted string", extracted_string)
+else:
+    print("Not found")
