@@ -1,0 +1,24 @@
+pipeline {
+    agent any 
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    dockerImage = docker.build("my-app:${BUILD_NUMBER}") 
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                sh "docker run --rm my-app:${BUILD_NUMBER} ./run-tests.sh" 
+            }
+        }
+        stage('Deploy') {
+            steps {
+                script {
+                    dockerImage.push() 
+                }
+            }
+        }
+    }
+}
