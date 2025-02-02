@@ -9,4 +9,4 @@ def multiple(N):
     for i in range(1, 10 +1):
         print(i * N)
 N = int(input("Enter a number: "))
-print(multiple(N))
+print(multiple(N)) 
