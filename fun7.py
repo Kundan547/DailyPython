@@ -4,3 +4,5 @@ def test(n):
         return 0
     else:
          return  n % 2 == 0
+     
+print(test(n))
