@@ -10,4 +10,5 @@ def convert_to_binary(num):
 
 n = int(input("Enter a number: "))
 binary_representation = convert_to_binary(n)
+
 print(f"Binary representation of {n} is: {binary_representation}")
