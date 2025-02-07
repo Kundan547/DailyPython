@@ -58,3 +58,5 @@ mgr_1.remove_emp(dev_2)
 mgr_1.print_emps()
 
 print(dev_1)
+
+print(dev_2.email)
