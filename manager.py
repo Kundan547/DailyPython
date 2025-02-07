@@ -49,13 +49,18 @@ dev_1 = Developer('Kundan', 'Vyas', 50000, 'Python')
 dev_2 = Developer('Test', 'Employee', 60000, 'Java')
 
 mgr_1 = Manager('Vinayak', 'Ojha', 90000, [dev_1])
+mgr_2 = Manager('Kunal' , 'Joshi' , 80000, [dev_2])
 
 print(mgr_1.email)
 
 mgr_1.add_emp(dev_2)
 mgr_1.remove_emp(dev_2)
 
+mgr_2.add_emp(dev_2)
+
 mgr_1.print_emps()
+
+mgr_2.print_emps()
 
 print(dev_1)
 
