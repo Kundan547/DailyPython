@@ -22,6 +22,7 @@ class LinkedList:
         print("None")
 
 llist = LinkedList()
+
 llist.append(1)
 llist.append(2)
 llist.append(3)
