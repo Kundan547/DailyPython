@@ -1,0 +1,37 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing Node.js and dependencies..."
+      - curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -  # Install Node.js v16
+      - sudo apt-get install -y nodejs  # Install Node.js
+      - node -v  # Check Node.js version
+      - npm -v  # Check npm version
+      - echo "Installing global Serverless framework..."
+      - sudo npm install -g serverless  # Install Serverless globally
+      - echo "Installing project dependencies..."
+      - npm install  # Install dependencies defined in package.json
+
+  pre_build:
+    commands:
+      - echo "Running pre-build validation..."
+      - npm run lint || echo "Lint warnings or errors ignored"  # Optional linting if configured
+
+  build:
+    commands:
+      - echo "Packaging the LogicTech application..."
+      - sls package --stage dev  # Package the application for the desired environment
+
+  post_build:
+    commands:
+      - echo "Build complete! Preparing deployment artifacts..."
+      - echo "Preparing final artifact with LogicTech/**/*"
+      - ls -l LogicTech/**/*  # Verify that all necessary files from LogicTech are included
+
+artifacts:
+  files:
+    - LogicTech/**/*  # Include all files in the LogicTech directory and subdirectories
+  discard-paths: yes  # Discards the directory structure to keep only the necessary files
+  base-directory: .  # Ensures the correct directory for packaging
+
