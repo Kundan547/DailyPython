@@ -4,9 +4,9 @@ phases:
   install:
     commands:
       - echo "Installing Node.js and dependencies..."
-      - curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -  # Install Node.js v16
-      - sudo apt-get install -y nodejs  # Install Node.js
-      - node -v  # Check Node.js version
+      - curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -  
+      - sudo apt-get install -y nodejs 
+      - node -v  
       - npm -v  # Check npm version
       - echo "Installing global Serverless framework..."
       - sudo npm install -g serverless  # Install Serverless globally
