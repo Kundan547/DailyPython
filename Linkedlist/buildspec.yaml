@@ -28,7 +28,6 @@ phases:
       - echo "Build complete! Preparing deployment artifacts..."
       - echo "Preparing final artifact with LogicTech/**/*"
       - ls -l LogicTech/**/*  # Verify that all necessary files from LogicTech are included
-
 artifacts:
   files:
     - LogicTech/**/*  # Include all files in the LogicTech directory and subdirectories
