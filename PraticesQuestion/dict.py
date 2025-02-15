@@ -5,4 +5,5 @@ myKeys.sort()
 
 # Sorted Dictionary
 sd = {i: d[i] for i in myKeys}
+
 print(sd)
