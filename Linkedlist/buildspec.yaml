@@ -7,7 +7,7 @@ phases:
       - curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -  
       - sudo apt-get install -y nodejs 
       - node -v  
-      - npm -v  # Check npm version
+      - npm -v  # Check npm Version
       - echo "Installing global Serverless framework..."
       - sudo npm install -g serverless  # Install Serverless globally
       - echo "Installing project dependencies..."
