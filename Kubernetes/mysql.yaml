@@ -56,7 +56,7 @@ spec:
     - port: 3306
   selector:
     app: mysql
-  clusterIP: 
+  clusterIP: None
 
 
 kubectl apply -f mysql-deployment.yaml
