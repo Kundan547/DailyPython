@@ -16,7 +16,7 @@ phases:
   pre_build:
     commands:
       - echo "Running pre-build validation..."
-      - npm run lint || echo "Lint warnings or errors ignored"  # Optional linting if configured
+      - npm run lint || echo "Lint warnings or errors ignored"  
 
   build:
     commands:
