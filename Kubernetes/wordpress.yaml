@@ -58,6 +58,4 @@ spec:
   selector:
     app: wordpress
 
-
-
 kubectl apply -f wordpress-deployment.yaml
