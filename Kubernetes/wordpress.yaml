@@ -59,12 +59,3 @@ spec:
     app: wordpress
 
 kubectl apply -f wordpress-deployment.yaml 
-
-
-
-  <dependency>
-      <groupId>org.sonarsource.python</groupId>
-      <artifactId>python-checks-testkit</artifactId>
-      <version>${project.version}</version>
-      <scope>test</scope>
-  </dependency>
