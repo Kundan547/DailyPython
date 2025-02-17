@@ -59,4 +59,5 @@ spec:
     app: wordpress
 
 
+
 kubectl apply -f wordpress-deployment.yaml
