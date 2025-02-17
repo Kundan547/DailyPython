@@ -7,6 +7,7 @@ def anangram(str1, str2):
 str1 = input("Enter first string: ")
 
 str2 = input("Enter second string: ")
+
 if anangram(str1, str2):
     print("Anangram: ")
 else:
