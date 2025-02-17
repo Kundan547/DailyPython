@@ -58,6 +58,4 @@ spec:
     app: mysql
   clusterIP: None
 
-
-
 kubectl apply -f mysql-deployment.yaml
