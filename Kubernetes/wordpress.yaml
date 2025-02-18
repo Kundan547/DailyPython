@@ -52,6 +52,7 @@ kind: Service
 metadata:
   name: wordpress
 spec:
+  
   type: LoadBalancer
   ports:
     - port: 80
