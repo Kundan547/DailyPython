@@ -38,7 +38,6 @@ spec:
           value: "wordpress"
         ports:
         - containerPort: 80
-        
           name: wordpress
         volumeMounts:
         - name: wordpress-persistent-storage
