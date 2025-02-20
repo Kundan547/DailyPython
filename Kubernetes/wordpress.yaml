@@ -58,4 +58,7 @@ spec:
   selector:
     app: wordpress
 
+
+
+# to apply chnages and deploy the wordpress file by using this commond in user terminal.
 kubectl apply -f wordpress-deployment.yaml 
