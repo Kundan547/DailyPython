@@ -1,6 +1,7 @@
 num1 = int(input("Enter frist number: "))
 num2 = int(input("Enter second number: "))
 
+
 if num1 > num2:
     minimum = num2
     
