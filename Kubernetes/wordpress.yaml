@@ -45,6 +45,7 @@ spec:
       volumes:
       - name: wordpress-content
         persistentVolumeClaim:
+          
           claimName: wordpress-pvc
 ---
 apiVersion: v1
