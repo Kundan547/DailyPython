@@ -4,6 +4,7 @@ def fib(num):
     elif num == 1:
         return 1
     else:
+    
         return fib(num - 1) + fib(num - 2)
     
 n = int(input("Enter a number to generate the fibonachi series: "))
