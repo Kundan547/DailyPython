@@ -7,6 +7,7 @@ def fib(num):
         return fib(num - 1) + fib(num - 2)
     
 n = int(input("Enter a number to generate the fibonachi series: "))
+
 print("Fibonachi series is: ")
 for i in range(0, n):
     print(fib(i))
