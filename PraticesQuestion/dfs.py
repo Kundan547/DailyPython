@@ -19,5 +19,5 @@ def dfs(graph,node):
         for n in graph[node]:
             dfs(graph,n)
 
-    dfs(graph1,'A')
-    print(visited)
+dfs(graph1,'A')
+print(visited)
