@@ -40,7 +40,7 @@ spec:
         - containerPort: 80
           name: wordpress
         volumeMounts:
-        - name: wordpress-persistent-storage
+        - name: wordpress-content
           mountPath: /var/www/html
       volumes:
       - name: wordpress-content
@@ -55,8 +55,9 @@ spec:
   type: LoadBalancer
   ports:
     - port: 80
+      targetPort: 80
   selector:
     app: wordpress
 
 # to apply chnages and deploy the wordpress file by using this commond in user terminal.
-kubectl apply -f wordpress-deployment.yaml 
+kubectl apply -f wordpress-deployment.yaml
