@@ -45,6 +45,7 @@ print(emp_2.raise_amt)
 emp_str_1 = 'Maan-Singh-70000'
 emp_str_2 = 'Suresh-Meena-30000'
 emp_str_3 = 'Abhishek-Jeenger-90000'
+emp_str_4 = 'Vinayak-Ojha-1000000'
 
 first, last, pay = emp_str_1.split('-')
 
