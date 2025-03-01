@@ -35,6 +35,7 @@ class Employee:
 
 emp_1 = Employee('Kundan', 'Vyas', 50000)
 emp_2 = Employee('Karthik', 'Vyas', 60000)
+emp_3 = Employee('Vinayak', 'Vyas', 1000000)
 
 Employee.set_raise_amt(1.05)
 
@@ -56,6 +57,6 @@ print(new_emp_1.email)
 print(new_emp_1.pay)
 
 import datetime
-my_date = datetime.date(2016, 7, 11)
+my_date = datetime.date(2025, 3, 1)
 
 print(Employee.is_workday(my_date))
