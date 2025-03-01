@@ -33,8 +33,8 @@ class Employee:
         return True
 
 
-emp_1 = Employee('Corey', 'Schafer', 50000)
-emp_2 = Employee('Test', 'Employee', 60000)
+emp_1 = Employee('Kundan', 'Vyas', 50000)
+emp_2 = Employee('Karthik', 'Vyas', 60000)
 
 Employee.set_raise_amt(1.05)
 
@@ -42,9 +42,9 @@ print(Employee.raise_amt)
 print(emp_1.raise_amt)
 print(emp_2.raise_amt)
 
-emp_str_1 = 'John-Doe-70000'
-emp_str_2 = 'Steve-Smith-30000'
-emp_str_3 = 'Jane-Doe-90000'
+emp_str_1 = 'Maan-Singh-70000'
+emp_str_2 = 'Suresh-Meena-30000'
+emp_str_3 = 'Abhishek-Jeenger-90000'
 
 first, last, pay = emp_str_1.split('-')
 
