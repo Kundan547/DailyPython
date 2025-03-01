@@ -10,6 +10,7 @@ class Employee:
         self.pay = pay
 
         Employee.num_of_emps += 1
+
     def fullname(self):
         return '{} {}'.format(self.first, self.last)
 
@@ -23,13 +24,34 @@ class Employee:
     @classmethod
     def from_string(cls, emp_str):
         first, last, pay = emp_str.split('-')
-        return cls(first, last, pay)
+        return cls(first, last, int(pay))
 
     @staticmethod
     def is_workday(day):
         if day.weekday() == 5 or day.weekday() == 6:
             return False
         return True
+
+    def __str__(self):
+        return f'{self.fullname()} - {self.email}'
+
+    def __repr__(self):
+        return f"Employee('{self.first}', '{self.last}', {self.pay})"
+
+    def annual_salary(self):
+        return self.pay * 12
+
+    def compare_salary(self, other):
+        if self.pay > other.pay:
+            return f'{self.fullname()} has a higher salary than {other.fullname()}'
+        elif self.pay < other.pay:
+            return f'{other.fullname()} has a higher salary than {self.fullname()}'
+        else:
+            return f'{self.fullname()} and {other.fullname()} have the same salary'
+
+    @classmethod
+    def display_total_employees(cls):
+        return f'Total number of employees: {cls.num_of_emps}'
 
 
 emp_1 = Employee('Kundan', 'Vyas', 50000)
@@ -47,9 +69,6 @@ emp_str_2 = 'Suresh-Meena-30000'
 emp_str_3 = 'Abhishek-Jeenger-90000'
 emp_str_4 = 'Vinayak-Ojha-1000000'
 
-first, last, pay = emp_str_1.split('-')
-
-#new_emp_1 = Employee(first, last, pay)
 new_emp_1 = Employee.from_string(emp_str_1)
 
 print(new_emp_1.email)
@@ -59,3 +78,11 @@ import datetime
 my_date = datetime.date(2025, 3, 1)
 
 print(Employee.is_workday(my_date))
+
+print(emp_1)
+print(repr(emp_1))
+
+print(emp_1.annual_salary())
+print(emp_1.compare_salary(emp_2))
+
+print(Employee.display_total_employees())
