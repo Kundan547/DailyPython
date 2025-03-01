@@ -10,7 +10,6 @@ class Employee:
         self.pay = pay
 
         Employee.num_of_emps += 1
-
     def fullname(self):
         return '{} {}'.format(self.first, self.last)
 
