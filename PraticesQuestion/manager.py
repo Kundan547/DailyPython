@@ -1,4 +1,5 @@
 class Employee:
+
     raise_amt = 1.04
 
     def __init__(self, first, last, pay):
