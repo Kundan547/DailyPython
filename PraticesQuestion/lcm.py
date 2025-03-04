@@ -4,6 +4,7 @@ def calculate_hcf(x, y):
     return x
 
 def calculate_lcm(x, y):
+    
     hcf = calculate_hcf(x, y)
     return (x * y) // hcf
 
